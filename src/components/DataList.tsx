@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { JsxElement } from "typescript";
-import getData, { Data } from "../apis/Apis";
+import getData from "../apis/Apis";
 import DataListItem from "./DataListItem";
 import Loader from "./Loader";
 
@@ -22,7 +21,6 @@ const DataList = () => {
                 isLoading: false,
                 data : res
             });
-            console.log("bye");
         })
     }, [])
 
