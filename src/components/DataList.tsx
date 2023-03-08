@@ -18,11 +18,11 @@ const DataList = () => {
     useEffect(() => {
         getData()
         .then((res : any) => {
-            console.log("hi");
             setState({
                 isLoading: false,
                 data : res
             });
+            console.log("bye");
         })
     }, [])
 
@@ -40,8 +40,8 @@ interface DataList {
 
 const DataListItems = ({ dataList } : any) => {
     return (<ul className="divide-y divide-gray-200">
-        {dataList.map((obj: object) => {
-            return (<DataListItem obj={obj} />)
+        {dataList.map((obj: object, index: number) => {
+            return (<DataListItem obj={obj} key={index} />)
         })}
     </ul>)
 }

@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.variable-text a {
+    color: rgb(99 102 241/var(--tw-text-opacity));
+    --tw-text-opacity: 1;
+}
