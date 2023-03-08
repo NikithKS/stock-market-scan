@@ -9,8 +9,6 @@ const Details = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        console.log(id);
-
         getData(id)
             .then((res: any) => {
                 console.log(res);
@@ -19,7 +17,7 @@ const Details = () => {
                     data: res
                 });
             })
-    }, [])
+    }, []);
 
     return state.isLoading ? <Loader /> : <DetailsContainer data={state.data} data-id={id} />;
 }

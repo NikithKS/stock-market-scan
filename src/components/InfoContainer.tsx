@@ -10,7 +10,7 @@ const InfoContainer = () => {
             <Routes>
                 <Route path='/' element={<DataList />} />
                 <Route path='/details/:id' element={<Details />} />
-                <Route path='/variable/:dollar/:x/:id' element={<Variable />} />
+                <Route path='/variable/:vari/:ind/:id' element={<Variable />} />
             </Routes>
         </>
     )
