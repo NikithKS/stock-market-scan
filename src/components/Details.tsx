@@ -24,8 +24,6 @@ const Details = () => {
 
 export default Details;
 
-
-
 const DetailsContainer = (props: any) => {
 
     const navigate = useNavigate();
@@ -55,13 +53,14 @@ const DetailsContainer = (props: any) => {
 }
 
 
+
 const CretariaListItem = (props: any) => {
 
     
     switch (props.crit.type) {
         case 'plain_text':
             return (
-                <li className="flex py-4">
+                <li data-testid="data-creatria-item" className="flex py-4">
                     <p className="font-medium text-gray-900">
                         {props.crit.text}
                     </p>
@@ -72,7 +71,6 @@ const CretariaListItem = (props: any) => {
             for (let i = 0; i < words.length; i++) {
                 if (words[i].startsWith('$')) {
                     let vari = props.crit['variable'][words[i]];
-                    console.log('yooooo', vari);
                     if (vari['type'] === 'value') {
                         words[i] = `<a href="/variable/${words[i]}/${props.index}/${props['data-id']}">${vari.values[0]}</a>`
                     } else if (vari['type'] === 'indicator') {
@@ -82,16 +80,15 @@ const CretariaListItem = (props: any) => {
             }
             let str = words.join(' ');
             return (
-                <li className="flex py-4">
+                <li data-testid="data-creatria-item" className="flex py-4">
                     <p className="font-medium text-gray-900 variable-text">
                         <span dangerouslySetInnerHTML={{__html: str}}></span>
                     </p>
                 </li>
             )
-            // return (<p className="font-medium text-gray-900 variable-text">
-            //     <span dangerouslySetInnerHTML={{__html: str}}></span>
-            // </p>)
         default:
             return (<></>)
     }
 }
+
+export { DetailsContainer, CretariaListItem};

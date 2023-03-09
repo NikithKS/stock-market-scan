@@ -1,7 +1,6 @@
 const DataListItem = ({ obj }: any) => {
-
     return (
-        <div className="overflow-hidden bg-white shadow sm:rounded-md md:min-w-[30vw]">
+        <div data-testid="data-list-item" className="overflow-hidden bg-white shadow sm:rounded-md md:min-w-[30vw]">
             <li>
                 <a className="block hover:bg-gray-50" href={`/details/${obj.id}`}>
                     <div className="flex items-center px-4 py-4 sm:px-6">

@@ -72,7 +72,7 @@ const ValueList = ({ values }: any) => {
     console.log('yasv', values);
     return (
 
-        <ul role="list" className="divide-y divide-gray-200">
+        <ul data-testid="data-id-value-list" role="list"  className="divide-y divide-gray-200">
             {values.map((val: any, index: number) =>
             (<li className="flex py-4" key={index}>
                 <p className="font-medium text-gray-900">{val}</p>
@@ -86,7 +86,7 @@ const ValueList = ({ values }: any) => {
 const Indicator = ({ vari }: any) => {
 
     return (
-        <ul role="list" className="divide-y divide-gray-200">
+        <ul  data-testid="data-id-indicator" role="list" className="divide-y divide-gray-200">
             <div>
                 <h3 className="text-lg font-medium leading-6 my-4 text-gray-900 uppercase">{vari['study_type']}</h3>
                 <div>
@@ -98,4 +98,11 @@ const Indicator = ({ vari }: any) => {
             </div>
         </ul>
     )
+}
+
+
+export {
+    VariableBody,
+    ValueList,
+    Indicator
 }
